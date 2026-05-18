@@ -676,7 +676,7 @@ do
     -- clangd = {},
     -- gopls = {},
     -- pyright = {},
-    -- rust_analyzer = {},
+    rust_analyzer = {},
     --
     -- Some languages (like typescript) have entire language plugins that can be useful:
     --    https://github.com/pmizio/typescript-tools.nvim
@@ -689,7 +689,8 @@ do
     -- Special Lua Config, as recommended by neovim help docs
     lua_ls = {
       on_init = function(client)
-        client.server_capabilities.documentFormattingProvider = false -- Disable formatting (formatting is done by stylua)
+        -- Disable formatting (formatting is done by stylua)
+        client.server_capabilities.documentFormattingProvider = false
 
         if client.workspace_folders then
           local path = client.workspace_folders[1].name
@@ -712,6 +713,7 @@ do
           },
         })
       end,
+
       ---@type lspconfig.settings.lua_ls
       settings = {
         Lua = {
@@ -950,7 +952,7 @@ do
   -- require 'kickstart.plugins.debug'
   -- require 'kickstart.plugins.indent_line'
   -- require 'kickstart.plugins.lint'
-  -- require 'kickstart.plugins.autopairs'
+  require 'kickstart.plugins.autopairs'
   -- require 'kickstart.plugins.neo-tree'
   -- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
 
