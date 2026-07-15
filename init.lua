@@ -682,7 +682,9 @@ do
     --    https://github.com/pmizio/typescript-tools.nvim
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
-    -- ts_ls = {},
+    ts_ls = {},
+
+    zls = {},
 
     stylua = {}, -- Used to format Lua code
 
@@ -784,7 +786,8 @@ do
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      javascript = { 'clang-format' },
+      html = { 'ast-grep' },
     },
   }
 
